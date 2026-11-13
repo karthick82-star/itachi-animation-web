@@ -3,31 +3,21 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>伏黒甚爾 — TOJI FUSHIGURO | The Sorcerer Killer</title>
+<title>うちはイタチ — UCHIHA ITACHI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;500;700;900&family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2" />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@300;500;900&family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=itachi_3" />
 </head>
 <body>
 
 <!-- ══════════ PRELOADER ══════════ -->
 <div class="loader" id="loader">
   <div class="loader__inner">
-    <div class="loader__emblem" aria-hidden="true">
-      <svg viewBox="0 0 100 100" class="loader__svg">
-        <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.4"/>
-        <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
-        <path d="M50 16 L50 84 M16 50 L84 50" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-        <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="var(--neon-violet)" stroke-width="1.5"/>
-        <circle cx="50" cy="50" r="6" fill="var(--neon-violet)"/>
-      </svg>
-    </div>
-    <div class="loader__glyph">天与呪縛</div>
-    <div class="loader__title">TOJI FUSHIGURO</div>
+    <div class="loader__glyph">写輪眼</div>
     <div class="loader__bar"><span id="loaderFill"></span></div>
     <div class="loader__meta">
-      <span>呪力ゼロ / INITIALIZING RESTRICTION</span>
+      <span>起動中 / INITIALIZING</span>
       <span id="loaderPct">00</span>
     </div>
   </div>
@@ -36,511 +26,233 @@
 <!-- ══════════ AMBIENT LAYERS ══════════ -->
 <div class="grain" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
 
-<!-- ══════════ CURSED ENERGY RIFT — VIOLET FLAME HEM ══════════ -->
-<div class="cursed-hem-bed" aria-hidden="true"></div>
-<canvas class="cursed-hem" id="cursedHemCanvas" aria-hidden="true"></canvas>
+<!-- ══════════ AMATERASU — 黒炎 / BLACK FLAME HEM ══════════ -->
+<div class="amaterasu-bed" aria-hidden="true"></div>
+<canvas class="amaterasu" id="amaterasuCanvas" aria-hidden="true"></canvas>
 
-<!-- ══════════ PURPLE CURSED LIGHTNING STORM ══════════ -->
+<!-- ══════════ STORM ══════════ -->
 <div class="storm" aria-hidden="true">
   <div class="storm__flash" id="stormFlash"></div>
   <svg class="storm__bolt" id="stormBolt" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-    <path id="boltPath" d="" fill="none" stroke="#F5F0FF" stroke-width="2.2"
+    <path id="boltPath" d="" fill="none" stroke="#fff" stroke-width="2"
           stroke-linejoin="round" stroke-linecap="round"/>
-    <path id="boltGlow" d="" fill="none" stroke="#B44AFF" stroke-width="10"
-          stroke-linejoin="round" stroke-linecap="round" opacity=".65"/>
+    <path id="boltGlow" d="" fill="none" stroke="#9fd8ff" stroke-width="9"
+          stroke-linejoin="round" stroke-linecap="round" opacity=".45"/>
   </svg>
 </div>
+<div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
 
-<!-- ══════════ CUSTOM PURPLE CURSOR ══════════ -->
-<div class="cursor" id="cursor" aria-hidden="true">
-  <span class="cursor-dot"></span>
-  <div class="cursor-ring"></div>
-</div>
-
-<!-- ══════════ FIXED CHROME / HEADER ══════════ -->
-<header class="chrome" id="chrome">
+<!-- ══════════ FIXED CHROME ══════════ -->
+<header class="chrome">
   <div class="chrome__mark">
-    <svg viewBox="0 0 100 100" class="toji-seal" aria-hidden="true">
-      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="5 3"/>
-      <polygon points="50,14 82,50 50,86 18,50" fill="none" stroke="currentColor" stroke-width="2"/>
-      <circle cx="50" cy="50" r="14" fill="none" stroke="var(--neon-violet)" stroke-width="2"/>
-      <line x1="50" y1="26" x2="50" y2="74" stroke="currentColor" stroke-width="2"/>
-      <line x1="26" y1="50" x2="74" y2="50" stroke="currentColor" stroke-width="2"/>
+    <svg viewBox="0 0 100 100" class="uchiwa" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M50 12 A38 38 0 0 1 50 88 A19 19 0 0 1 50 50 A19 19 0 0 0 50 12Z" fill="currentColor" opacity=".9"/>
+      <circle cx="50" cy="31" r="6" fill="var(--ink)"/>
+      <circle cx="50" cy="69" r="6" fill="currentColor"/>
     </svg>
-    <div class="chrome__brand">
-      <span class="chrome__brand-name">TOJI</span>
-      <span class="chrome__brand-sub">伏黒甚爾</span>
-    </div>
+    <span>UCHIHA</span>
   </div>
-
-  <nav class="chrome__nav" id="chromeNav">
-    <a href="#scrub" data-jp="甚爾" class="active">HOME</a>
-    <a href="#target" data-jp="追尾">COMBAT</a>
-    <a href="#character" data-jp="人物">CHARACTER</a>
-    <a href="#abilities" data-jp="能力">ABILITIES</a>
-    <a href="#weapons" data-jp="呪具">WEAPONS</a>
-    <a href="#about" data-jp="終章">ABOUT</a>
-  </nav>
-
-  <div class="chrome__actions">
+  <nav class="chrome__nav">
+    <a href="#scrub" data-jp="覚">STORY</a>
+    <a href="#eyes" data-jp="眼">EYES</a>
+    <a href="#jutsu" data-jp="術">JUTSU</a>
+    <a href="#quote" data-jp="言">WORDS</a>
+    <a href="#end" data-jp="終">END</a>
     <button class="chrome__sound" id="soundToggle" type="button"
-            aria-pressed="false" title="呪術雷鳴 / Cursed thunder audio">
-      <span class="chrome__sound-jp">呪</span>
+            aria-pressed="false" title="雷鳴 / thunder audio">
+      <span class="chrome__sound-jp">音</span>
       <span class="chrome__sound-state" id="soundState">OFF</span>
     </button>
-    <button class="chrome__burger" id="burgerToggle" type="button" aria-label="Toggle Menu" aria-expanded="false">
-      <span></span><span></span>
-    </button>
-  </div>
+  </nav>
 </header>
 
-<!-- ══════════ SIDE RAILS ══════════ -->
 <div class="rail rail--left" aria-hidden="true">
-  <span>天与呪縛 · 術師殺し · 呪力ゼロ · 禪院甚爾</span>
+  <span>暁 · AKATSUKI · 木ノ葉隠れの里</span>
 </div>
 <div class="rail rail--right" aria-hidden="true">
   <span id="railScroll">SCROLL 000%</span>
-  <div class="rail__track"><div class="rail__bar" id="railBar"></div></div>
 </div>
 
-<!-- ══════════ SCROLL HINT ══════════ -->
 <div class="hint" id="hint">
-  <span class="hint__jp">降下</span>
+  <span class="hint__jp">下へ</span>
   <span class="hint__line"></span>
-  <span class="hint__en">SCROLL TO UNLEASH THE BEAST</span>
+  <span class="hint__en">SCROLL TO OPEN HIS EYES</span>
 </div>
 
 <main>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ACT I — HERO & SCROLL SCRUB (CINEMATIC PARALLAX CANVAS)
-     ═══════════════════════════════════════════════════════════ -->
+<!-- ══════════ ACT I — SCROLL SCRUB (71 FRAMES) ══════════ -->
 <section class="scrub" id="scrub">
   <div class="scrub__sticky">
     <canvas id="mainCanvas"></canvas>
     <div class="scrub__glow" id="scrubGlow"></div>
-    <canvas id="particleCanvas" class="particles"></canvas>
 
-    <!-- Phase captions with cinematic typography -->
+    <!-- phase captions -->
     <div class="phase" data-phase="0">
-      <div class="phase__eyebrow">STAGE 01 · ORIGIN</div>
-      <h2 class="phase__jp">天与呪縛</h2>
-      <p class="phase__en">HEAVENLY RESTRICTION</p>
-      <p class="phase__sub">「呪霊も操れねぇ男を、人は『落ちこぼれ』と呼ぶ。」<br>Born with absolute zero cursed energy, discarded by the Zen'in clan — he forged his mortal flesh into an insurmountable weapon.</p>
+      <h1 class="phase__jp">静寂</h1>
+      <p class="phase__en">SILENCE</p>
+      <p class="phase__sub">「一人で背負うと決めた。」 — He chose to carry it alone.</p>
     </div>
-
     <div class="phase" data-phase="1">
-      <div class="phase__eyebrow">STAGE 02 · PHYSIQUE</div>
-      <h2 class="phase__jp">五感研磨</h2>
-      <p class="phase__en">APEX PHYSICALITY</p>
-      <p class="phase__sub">「五感を極限まで研ぎ澄ませば、空気の揺らぎすら視える。」<br>Supersonic speed, inhuman reaction time, and razor-sharp senses capable of tracking invisible curses and micro-air currents.</p>
+      <h2 class="phase__jp">覚醒</h2>
+      <p class="phase__en">AWAKENING</p>
+      <p class="phase__sub">「本当の力は、目を開けた者にしか見えない。」</p>
     </div>
-
     <div class="phase" data-phase="2">
-      <div class="phase__eyebrow">STAGE 03 · ARSENAL</div>
-      <h2 class="phase__jp">格納呪霊</h2>
-      <p class="phase__en">INVENTORY CURSE</p>
-      <p class="phase__sub">「吐き出せ。次はお前だ。」<br>A low-grade centipede-like curse coiled over his shoulder, holding Special Grade cursed tools within its body to bypass barrier detection.</p>
+      <h2 class="phase__jp">写輪眼</h2>
+      <p class="phase__en">SHARINGAN</p>
+      <p class="phase__sub">Three tomoe. Nothing escapes them.</p>
     </div>
-
     <div class="phase" data-phase="3">
-      <div class="phase__eyebrow">STAGE 04 · AWAKENED</div>
-      <h2 class="phase__jp">術師殺し</h2>
-      <p class="phase__en">THE SORCERER KILLER</p>
-      <p class="phase__sub">「五条悟、お前の負けだ。」<br>The anomaly who defeated the Six Eyes and shattered the destiny of the Jujutsu world with pure cold-blooded lethal supremacy.</p>
+      <h2 class="phase__jp">烏</h2>
+      <p class="phase__en">A THOUSAND CROWS</p>
+      <p class="phase__sub">「幻術も、真実も、同じ羽で運ばれる。」</p>
     </div>
 
-    <!-- Title lockup in the opening beat -->
+    <!-- Title lockup in the first beat -->
     <div class="titleblock" id="titleblock">
-      <div class="titleblock__kicker">
-        <span>JUJUTSU KAISEN</span>
-        <span class="sep">◆</span>
-        <span>懐玉・玉折</span>
-        <span class="sep">◆</span>
-        <span>SPECIAL CLASSIFICATION</span>
-      </div>
-      <h1 class="titleblock__jp">伏黒<span>甚爾</span></h1>
-      <p class="titleblock__en">T O J I &nbsp; F U S H I G U R O</p>
-      <div class="titleblock__sub">THE SORCERER KILLER</div>
-      <p class="titleblock__desc">
-        A man devoid of cursed energy who achieved absolute physical perfection. The apex predator who humbled modern jujutsu society.
-      </p>
-      <div class="titleblock__scroll-prompt">
-        <span class="prompt-icon">↓</span>
-        <span>EXPLORE PROFILE & ARSENAL</span>
-      </div>
+      <p class="titleblock__kicker">木ノ葉隠れの里 · 暁</p>
+      <h1 class="titleblock__jp">うちは<span>イタチ</span></h1>
+      <p class="titleblock__en">U C H I H A &nbsp; I T A C H I</p>
     </div>
+
+    <canvas id="featherCanvas" class="feathers"></canvas>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ACT II — TARGET ACQUISITION & GAZE COMBAT TRACKING
-     ═══════════════════════════════════════════════════════════ -->
-<section class="eyes" id="target">
+<!-- ══════════ ACT II — MOUSE-TRACKED EYES (51 FRAMES) ══════════ -->
+<section class="eyes" id="eyes">
   <div class="eyes__sticky">
     <canvas id="eyeCanvas"></canvas>
     <div class="eyes__flare" id="eyeFlare"></div>
-
-    <!-- Tactical HUD overlays -->
     <div class="eyes__frame">
-      <div class="eyes__label eyes__label--tl">天与の肉体 · PHYSICAL ZENITH</div>
-      <div class="eyes__label eyes__label--tr">TARGET LOCK · LIVE TRACK</div>
-      <div class="eyes__label eyes__label--bl" id="eyeReadout">照準 中立 00.0 / CURSED ENERGY 0.00%</div>
-      <div class="eyes__label eyes__label--br">動かせ · MOVE TO ENGAGE</div>
+      <div class="eyes__label eyes__label--tl">万華鏡写輪眼</div>
+      <div class="eyes__label eyes__label--tr">MANGEKYŌ · LIVE TRACK</div>
+      <div class="eyes__label eyes__label--bl" id="eyeReadout">視線 左 00.0 / FRAME 00</div>
+      <div class="eyes__label eyes__label--br">動かせ · MOVE YOUR CURSOR</div>
     </div>
-
-    <div class="eyes__reticle" id="eyesReticle">
-      <div class="reticle-corner tl"></div>
-      <div class="reticle-corner tr"></div>
-      <div class="reticle-corner bl"></div>
-      <div class="reticle-corner br"></div>
-      <div class="reticle-center"></div>
-    </div>
-
     <div class="eyes__copy">
-      <div class="badge-mini">THREAT ASSESSMENT: EXTREME</div>
-      <h2>獲物を<span>見据える瞳</span></h2>
-      <p>彼には呪力がない。だからこそ、呪力探知では決して捉えられない。 — He possesses zero cursed energy. Invisible to barrier detection.</p>
-      <div class="eyes__metrics">
-        <div class="metric">
-          <span class="metric__label">CURSED ENERGY</span>
-          <span class="metric__value">0.00% (NULL)</span>
-        </div>
-        <div class="metric">
-          <span class="metric__label">PHYSICAL STRENGTH</span>
-          <span class="metric__value">MAX 100%</span>
-        </div>
-        <div class="metric">
-          <span class="metric__label">BARRIER IMMUNITY</span>
-          <span class="metric__value">CONFIRMED</span>
-        </div>
-      </div>
+      <h2>見つめ<span>返せ</span></h2>
+      <p>彼はあなたを見ている。 — Wherever you move, he follows.</p>
+      <p class="eyes__note">瞳孔追尾 · nine measured gaze positions, mapped left to right</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ACT III — TOJI CHARACTER DOSSIER SECTION
-     ═══════════════════════════════════════════════════════════ -->
-<section class="character-section" id="character">
-  <div class="character-section__container">
-    <div class="section-header" data-reveal>
-      <span class="eyebrow">人物紹介 · CLASSIFIED DOSSIER</span>
-      <h2>TOJI FUSHIGURO</h2>
-      <p class="section-subtitle">Born Toji Zen'in — The mercenary who proved that raw, unadulterated human physicality could extinguish the divine supremacy of sorcery.</p>
-    </div>
-
-    <div class="character-grid">
-      <!-- Left Column: Visual Showcase -->
-      <div class="character-card-visual" data-reveal>
-        <div class="visual-wrapper">
-          <img src="assets/toji-gun.jpg" alt="Toji Fushiguro confident pose" class="character-img" loading="lazy" />
-          <div class="visual-overlay"></div>
-          <div class="visual-badge">
-            <span class="badge-jp">術師殺し</span>
-            <span class="badge-en">SORCERER KILLER</span>
-          </div>
-          <div class="visual-kanji-bg" aria-hidden="true">甚爾</div>
-        </div>
-        <div class="visual-footer">
-          <div class="visual-tag">BORN: ZEN'IN CLAN (禪院)</div>
-          <div class="visual-tag">ANIME: JUJUTSU KAISEN</div>
-          <div class="visual-tag">STATUS: APEX PREDATOR</div>
-        </div>
-      </div>
-
-      <!-- Right Column: Info & Stats -->
-      <div class="character-info" data-reveal>
-        <div class="info-block">
-          <h3 class="info-block__title">
-            <span class="info-num">01</span>
-            HEAVENLY RESTRICTION (天与呪縛)
-          </h3>
-          <p class="info-block__text">
-            A binding condition placed upon him from birth. In exchange for having zero cursed energy, his physical body was elevated to the highest possible standard known to humankind. He can run faster than sight, leap buildings without effort, and resist severe cursed attacks with flesh alone.
-          </p>
-        </div>
-
-        <div class="info-block">
-          <h3 class="info-block__title">
-            <span class="info-num">02</span>
-            ENHANCED SENSORY PERCEPTION
-          </h3>
-          <p class="info-block__text">
-            Without cursed energy, Toji's five standard senses are amplified to superhuman heights. He perceives curses indirectly through the vibrations, temperature changes, and air shifts they create, allowing him to react with surgical precision in pitch darkness.
-          </p>
-        </div>
-
-        <div class="info-block">
-          <h3 class="info-block__title">
-            <span class="info-num">03</span>
-            TACTICAL GENIUS & PRAGMATISM
-          </h3>
-          <p class="info-block__text">
-            Unburdened by jujutsu honor or tradition, Toji utilizes firearms, stealth tactics, psychological warfare, and an arsenal of Special Grade cursed tools to dissect and dismantle sorcerers before they can activate their Domain Expansions.
-          </p>
-        </div>
-
-        <!-- Combat Ratings -->
-        <div class="combat-ratings">
-          <div class="rating-row">
-            <div class="rating-info">
-              <span>PHYSICAL POWER & SPEED</span>
-              <span>100 / 100</span>
-            </div>
-            <div class="rating-bar"><div class="rating-fill" style="--val: 100%"></div></div>
-          </div>
-          <div class="rating-row">
-            <div class="rating-info">
-              <span>SENSORY REACTION TIME</span>
-              <span>100 / 100</span>
-            </div>
-            <div class="rating-bar"><div class="rating-fill" style="--val: 100%"></div></div>
-          </div>
-          <div class="rating-row">
-            <div class="rating-info">
-              <span>CURSED TOOL MASTERY</span>
-              <span>98 / 100</span>
-            </div>
-            <div class="rating-bar"><div class="rating-fill" style="--val: 98%"></div></div>
-          </div>
-          <div class="rating-row">
-            <div class="rating-info">
-              <span>CURSED ENERGY LEVEL</span>
-              <span class="highlight-zero">0.00 / 100</span>
-            </div>
-            <div class="rating-bar"><div class="rating-fill zero" style="--val: 0%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════════
-     ACT IV — CURSED WEAPONS & ABILITIES SECTION
-     ═══════════════════════════════════════════════════════════ -->
-<section class="jutsu" id="weapons">
-  <!-- background plate revealed under the purple ghost cursor -->
+<!-- ══════════ ACT III — JUTSU GRID ══════════ -->
+<section class="jutsu" id="jutsu">
+  <!-- background plate revealed under the ghost cursor -->
   <div class="jutsu__reveal" id="jutsuReveal" aria-hidden="true"></div>
   <div class="jutsu__rain" aria-hidden="true"></div>
-  <!-- WebGL Cursed Energy Smoke Ghost Cursor -->
+  <!-- ported reactbits.dev ghost-cursor, raw WebGL -->
   <canvas class="ghost" id="ghostCanvas" aria-hidden="true"></canvas>
 
   <div class="jutsu__inner">
-    <div class="jutsu__head" id="abilities">
-      <span class="eyebrow" data-px="0.10">呪具・能力 · LETHAL ARSENAL</span>
-      <h2 data-px="0.18">CURSED WEAPONS<br>&amp; ABILITIES</h2>
-      <p data-px="0.26">
-        Armed with a stomach-curse packed with Special Grade cursed tools and a body honed to supernatural limits, Toji wields an arsenal designed to nullify, dismantle, and slaughter any sorcerer who relies on jujutsu.
-      </p>
+    <div class="jutsu__head">
+      <span class="eyebrow" data-px="0.10">禁術 · FORBIDDEN ARTS</span>
+      <h2 data-px="0.18">其の眼に<br>宿る術</h2>
+      <p data-px="0.26">The techniques that lived behind those eyes — and the price each one demanded. He never used a single one of them for himself.</p>
       <div class="jutsu__meta" data-px="0.34">
-        <span><i>特級呪具</i>SPECIAL GRADE</span>
-        <span><i>天与呪縛</i>RESTRICTION</span>
-        <span><i>六つの秘技</i>SIX ARSENALS</span>
+        <span><i>血継限界</i>KEKKEI GENKAI</span>
+        <span><i>暁 · 潜入</i>INFILTRATION</span>
+        <span><i>四つの術</i>FOUR ARTS</span>
       </div>
-      <p class="jutsu__hint" data-px="0.40">動かせ · SWEEP CURSOR TO REVEAL CURSED ARSENAL</p>
+      <p class="jutsu__hint" data-px="0.40">動かせ · burn the dark away</p>
     </div>
 
-    <!-- 6 CARDS GRID -->
-    <div class="weapons__grid">
-      <!-- 01: Inverted Spear of Heaven -->
-      <article class="card" data-card="spear">
-        <div class="card__visual">
-          <img src="assets/weapon-spear.jpg" alt="Inverted Spear of Heaven" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">01 / SPECIAL GRADE</span>
-            <span class="card__badge">TECHNIQUE NULLIFIER</span>
-          </div>
-          <h3 class="card__jp">天逆鉾</h3>
-          <p class="card__ro">INVERTED SPEAR OF HEAVEN</p>
-          <p class="card__txt">
-            A two-pronged jitte dagger imbued with a foreign cursed technique that forcibly nullifies and cancels any active jujutsu upon physical contact. The decisive weapon used to pierce Satoru Gojo's Limitless Infinity.
-          </p>
-          <div class="card__foot">
-            <i>特級呪具</i>
-            <span>AMANO HOKO · ABSOLUTE NULLIFICATION</span>
-          </div>
+    <!-- 4 LEGENDARY JUTSU CARDS -->
+    <div class="jutsu__grid">
+      <!-- 01: Tsukuyomi -->
+      <article class="card">
+        <span class="card__num">01 / GENJUTSU</span>
+        <h3 class="card__jp">月読</h3>
+        <p class="card__ro">TSUKUYOMI</p>
+        <p class="card__txt">
+          An ocular genjutsu that alters perception of time. Traps the victim in an illusory realm where seventy-two hours of torture unfold in a single real-world second.
+        </p>
+        <div class="card__foot">
+          <i>精神支配</i>
+          <span>MANGEKYŌ · TEMPORAL ILLUSION</span>
         </div>
       </article>
 
-      <!-- 02: Split Soul Katana -->
-      <article class="card" data-card="katana">
-        <div class="card__visual">
-          <img src="assets/weapon-katana.jpg" alt="Split Soul Katana" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">02 / SPECIAL GRADE</span>
-            <span class="card__badge">SOUL SEVER</span>
-          </div>
-          <h3 class="card__jp">釈魂刀</h3>
-          <p class="card__ro">SPLIT SOUL KATANA</p>
-          <p class="card__txt">
-            A masterwork cursed blade featuring a soft fur tsuba. It bypasses any physical toughness, defense, or armor to directly sever the outline of the victim's soul. Unblockable by conventional physical barriers.
-          </p>
-          <div class="card__foot">
-            <i>魂の切断</i>
-            <span>SHAKKONTŌ · DIRECT SOUL DAMAGE</span>
-          </div>
+      <!-- 02: Amaterasu -->
+      <article class="card">
+        <span class="card__num">02 / ENTOM</span>
+        <h3 class="card__jp">天照</h3>
+        <p class="card__ro">AMATERASU</p>
+        <p class="card__txt">
+          Inextinguishable black flames ignited at the focal point of the caster's gaze. They burn for seven days and nights, consuming anything in their path—even fire itself.
+        </p>
+        <div class="card__foot">
+          <i>消えぬ黒炎</i>
+          <span>MANGEKYŌ · BLACK FLAMES</span>
         </div>
       </article>
 
-      <!-- 03: Playful Cloud -->
-      <article class="card" data-card="playful">
-        <div class="card__visual">
-          <img src="assets/weapon-playful-cloud.jpg" alt="Playful Cloud" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">03 / SPECIAL GRADE</span>
-            <span class="card__badge">KINETIC MULTIPLIER</span>
-          </div>
-          <h3 class="card__jp">游雲</h3>
-          <p class="card__ro">PLAYFUL CLOUD</p>
-          <p class="card__txt">
-            The only Special Grade cursed tool not imbued with a cursed technique. Instead, its destructive power scales directly with the pure brute physical strength of its wielder — making it a weapon of mass annihilation in Toji's hands.
-          </p>
-          <div class="card__foot">
-            <i>三節棍</i>
-            <span>YŪUN · SCALED PHYSICAL POWER</span>
-          </div>
+      <!-- 03: Susanoo -->
+      <article class="card">
+        <span class="card__num">03 / SPECTRAL</span>
+        <h3 class="card__jp">須佐能乎</h3>
+        <p class="card__ro">SUSANOO</p>
+        <p class="card__txt">
+          A titanic spectral warrior formed from chakra. Itachi wields it with the mystical Totsuka Blade to seal souls forever, and the Yata Mirror to reflect any attack.
+        </p>
+        <div class="card__foot">
+          <i>絶対防御</i>
+          <span>TOTSUKA BLADE · YATA MIRROR</span>
         </div>
       </article>
 
-      <!-- 04: Chain of a Thousand Miles -->
-      <article class="card" data-card="chain">
-        <div class="card__visual">
-          <img src="assets/weapon-chain.jpg" alt="Chain of a Thousand Miles" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">04 / CURSED TOOL</span>
-            <span class="card__badge">INFINITE RANGE</span>
-          </div>
-          <h3 class="card__jp">万里ノ鎖</h3>
-          <p class="card__ro">CHAIN OF A THOUSAND MILES</p>
-          <p class="card__txt">
-            A mystical chain capable of extending indefinitely without weight or limitation, provided the rear link remains hidden from sight. Toji connects it to the Inverted Spear of Heaven, creating a lethal, omni-directional ranged weapon.
-          </p>
-          <div class="card__foot">
-            <i>無限伸長</i>
-            <span>BANRI NO KUSARI · UNBOUND EXTENSION</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05: Heavenly Restriction -->
-      <article class="card" data-card="restriction">
-        <div class="card__visual">
-          <img src="assets/ability-restriction.jpg" alt="Heavenly Restriction" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">05 / DIVINE BINDING</span>
-            <span class="card__badge">INHERENT TRAIT</span>
-          </div>
-          <h3 class="card__jp">天与呪縛</h3>
-          <p class="card__ro">HEAVENLY RESTRICTION</p>
-          <p class="card__txt">
-            A biological covenant imposed at birth. Absolute zero cursed energy grants complete immunity to barrier recognition, undetectable stealth inside jujutsu domains, and five superhuman senses fine-tuned to invisible phenomena.
-          </p>
-          <div class="card__foot">
-            <i>呪力ゼロ</i>
-            <span>TENYO JUBAKU · STEALTH & IMMUNITY</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 06: Exceptional Physical Strength -->
-      <article class="card" data-card="physique">
-        <div class="card__visual">
-          <img src="assets/ability-strength.jpg" alt="Exceptional Physical Strength" class="card__img" loading="lazy" />
-          <div class="card__glow"></div>
-        </div>
-        <div class="card__content">
-          <div class="card__top">
-            <span class="card__num">06 / APEX BODY</span>
-            <span class="card__badge">SUPERSONIC COMBAT</span>
-          </div>
-          <h3 class="card__jp">超絶身体能力</h3>
-          <p class="card__ro">EXCEPTIONAL PHYSICAL STRENGTH</p>
-          <p class="card__txt">
-            Speed that outpaces the human optic nerve, strike impacts that obliterate reinforced concrete, and reflexes capable of navigating air friction in mid-air. He moves as an uncontainable blur that sorcerers cannot track.
-          </p>
-          <div class="card__foot">
-            <i>神速の肉体</i>
-            <span>APEX PHYSIQUE · SUPERHUMAN POTENCY</span>
-          </div>
+      <!-- 04: Izanami -->
+      <article class="card">
+        <span class="card__num">04 / DESTINY</span>
+        <h3 class="card__jp">イザナミ</h3>
+        <p class="card__ro">IZANAMI</p>
+        <p class="card__txt">
+          The ultimate kinjutsu of the Uchiha clan. Loops physical sensation in an infinite time trap until the target recognizes and accepts their true self, sacrificing one eye.
+        </p>
+        <div class="card__foot">
+          <i>運命の選択</i>
+          <span>ULTIMATE KINJUTSU · BLINDING SACRIFICE</span>
         </div>
       </article>
     </div>
 
     <div class="jutsu__foot" data-px="0.14">
-      <span>「五条悟、お前の負けだ。」</span>
-      <span>A MAN DEVOID OF JUJUTSU FELLED THE ZENITH OF SORCERY</span>
+      <span>「命を賭して、里を守る。」</span>
+      <span>TO PROTECT THE VILLAGE, HE GAVE UP BEING LOVED BY IT</span>
     </div>
   </div>
 
-  <!-- Bottom-right atmospheric branding -->
+  <!-- bottom-right anchor -->
   <div class="jutsu__amaterasu" aria-hidden="true">
-    <span class="jutsu__amaterasu-jp">甚爾</span>
-    <span class="jutsu__amaterasu-ro">SORCERER KILLER</span>
-    <span class="jutsu__amaterasu-sub">天与呪縛 · 呪力ゼロ · 伏黒甚爾</span>
+    <span class="jutsu__amaterasu-jp">天照</span>
+    <span class="jutsu__amaterasu-ro">AMATERASU</span>
+    <span class="jutsu__amaterasu-sub">黒炎 · 七日七夜 · 消えぬ火</span>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ACT V — CINEMATIC PHILOSOPHICAL QUOTE
-     ═══════════════════════════════════════════════════════════ -->
-<section class="quote" id="about">
-  <div class="quote__ambient-bg" aria-hidden="true">天与呪縛</div>
-  <div class="quote__jp">「ただ、認めて欲しかっただけか<span class="dots">…</span>」</div>
+<!-- ══════════ ACT IV — QUOTE ══════════ -->
+<section class="quote" id="quote">
+  <div class="quote__jp">許せ、サスケ<span class="dots">…</span></div>
   <blockquote>
-    <p>
-      “I abandoned my pride. I discarded the Zen'in family, threw away jujutsu society, and lived purely for myself. Yet here I am, seeking validation by crushing the greatest sorcerer alive.”
-    </p>
-    <cite>伏黒甚爾 · TOJI FUSHIGURO</cite>
+    <p>“Those who cannot acknowledge their true selves are bound to fail. People live their lives bound by what they accept as correct and true — that's how they define reality.”</p>
+    <cite>うちはイタチ · UCHIHA ITACHI</cite>
   </blockquote>
-  <div class="quote__mark">天与呪縛の頂点 · THE ANOMALY WHO DEFIED DESTINY</div>
+  <div class="quote__mark">これで最後だ</div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ACT VI — FOOTER & CLOSING
-     ═══════════════════════════════════════════════════════════ -->
+<!-- ══════════ FOOTER ══════════ -->
 <footer id="end">
-  <div class="footer__visual-accent" aria-hidden="true">
-    <img src="assets/toji-curse.jpg" alt="Toji Fushiguro closing visual" class="footer__toji-bg" loading="lazy" />
-    <div class="footer__vignette"></div>
-  </div>
-
-  <div class="footer__content">
-    <div class="footer__big">THE SORCERER KILLER</div>
-    <div class="footer__kanji">天与呪縛</div>
-    <div class="footer__row">
-      <span>ZERO CURSED ENERGY</span>
-      <span>ZEN'IN BLOODLINE · JUJUTSU KAISEN</span>
-      <span>「勝負はこれからだ。」</span>
-    </div>
-    <div class="footer__subrow">
-      <div class="footer__nav">
-        <a href="#scrub">TOP</a>
-        <a href="#target">COMBAT</a>
-        <a href="#character">PROFILE</a>
-        <a href="#weapons">WEAPONS</a>
-      </div>
-      <div class="footer__copy">
-        TOJI FUSHIGURO CINEMATIC EXPERIENCE &copy; 2026. JUJUTSU KAISEN TRIBUTE.
-      </div>
-    </div>
+  <div class="footer__big">木ノ葉の意志</div>
+  <div class="footer__row">
+    <span>WILL OF FIRE</span>
+    <span>六月九日 — 三月二十五日</span>
+    <span>「いつまでも、愛してるよ。」</span>
   </div>
 </footer>
 
@@ -548,10 +260,10 @@
 
 <!-- ══════════ STICKY BADGE ══════════ -->
 <div class="sticky-badge" id="stickyBadge">
-  <span class="sticky-badge__jp">天与呪縛</span>
-  <span class="sticky-badge__en">ZERO CURSED ENERGY</span>
+  <span class="sticky-badge__jp">写輪眼</span>
+  <span class="sticky-badge__en">SHARINGAN</span>
 </div>
 
-<script src="main.js?v=2"></script>
+<script src="main.js?v=itachi_3"></script>
 </body>
 </html>
