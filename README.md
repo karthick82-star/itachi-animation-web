@@ -71,3 +71,4 @@ npx serve .
 
 ## 📜 License & Tribute
 Created as an artistic tribute to Gege Akutami's *Jujutsu Kaisen*.
+
